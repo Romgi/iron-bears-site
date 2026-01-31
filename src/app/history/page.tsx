@@ -32,7 +32,7 @@ export default function HistoryPage() {
                     </h1>
 
                     <p className="mt-4 max-w-3xl text-zinc-300">
-                        Our robots by season, starting with the most recent year.
+                        Our robots by season.
                     </p>
 
                     <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

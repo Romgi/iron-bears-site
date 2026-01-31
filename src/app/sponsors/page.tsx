@@ -67,7 +67,7 @@ export default function SponsorsPage() {
                     </h1>
 
                     <p className="mt-4 max-w-3xl text-zinc-300">
-                        Sponsors make our season possible — supporting tools, parts, travel,
+                        Sponsors make our season possible — supporting tools, parts, funding,
                         and outreach. Thank you for supporting <span className="text-primary font-semibold">Team 854</span>.
                     </p>
 
@@ -122,12 +122,12 @@ export default function SponsorsPage() {
                             <p className="mt-2 max-w-3xl text-sm text-zinc-300">
                                 Interested in supporting Iron Bears Robotics? We would love to
                                 partner with you and share a sponsorship package outlining
-                                benefits and impact.
+                                benefits and impact. If you would like to contribute your skills to the team, we are always looking for new mentors!
                             </p>
                             <div className="mt-4 text-sm text-zinc-300">
                                 Email:{" "}
                                 <span className="font-semibold text-primary">
-                                    sponsors@yourteamdomain.com
+                                    mci.robotics@gmail.com
                                 </span>
                             </div>
                         </div>
