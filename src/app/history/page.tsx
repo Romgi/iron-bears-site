@@ -8,18 +8,18 @@ type Season = {
 };
 
 const seasons: Season[] = [
-    { year: 2003, game: "Stack Attack", image: "/images/history/2003.jpg" },
-    { year: 2007, game: "Rack 'n Roll", image: "/images/history/2007.jpg" },
-    { year: 2009, game: "Lunacy", image: "/images/history/2009.jpg" },
-    { year: 2012, game: "Rebound Rumble", image: "/images/history/2012.jpg" },
-    { year: 2015, game: "Recycle Rush", image: "/images/history/2015.jpg" },
-    { year: 2016, game: "Stronghold", image: "/images/history/2016.jpg" },
-    { year: 2017, game: "Steamworks", image: "/images/history/2017.jpg" },
-    { year: 2018, game: "Power Up", image: "/images/history/2018.jpg" },
-    { year: 2019, game: "Destination: Deep Space", image: "/images/history/2019.jpg" },
-    { year: 2020, game: "Infinite Recharge", image: "/images/history/2020.jpg" },
-    { year: 2024, game: "CRESCENDO", image: "/images/history/2024.jpg" },
     { year: 2025, game: "REEFSCAPE", image: "/images/history/2025.jpg" },
+    { year: 2024, game: "CRESCENDO", image: "/images/history/2024.jpg" },
+    { year: 2020, game: "Infinite Recharge", image: "/images/history/2020.jpg" },
+    { year: 2019, game: "Destination: Deep Space", image: "/images/history/2019.jpg" },
+    { year: 2018, game: "Power Up", image: "/images/history/2018.jpg" },
+    { year: 2017, game: "Steamworks", image: "/images/history/2017.jpg" },
+    { year: 2016, game: "Stronghold", image: "/images/history/2016.jpg" },
+    { year: 2015, game: "Recycle Rush", image: "/images/history/2015.jpg" },
+    { year: 2012, game: "Rebound Rumble", image: "/images/history/2012.jpg" },
+    { year: 2009, game: "Lunacy", image: "/images/history/2009.jpg" },
+    { year: 2007, game: "Rack 'n Roll", image: "/images/history/2007.jpg" },
+    { year: 2003, game: "Stack Attack", image: "/images/history/2003.jpg" },
 ];
 
 export default function HistoryPage() {
@@ -32,7 +32,7 @@ export default function HistoryPage() {
                     </h1>
 
                     <p className="mt-4 max-w-3xl text-zinc-300">
-                        Robots by season, paired with the official FRC game for that year.
+                        Our robots by season, starting with the most recent year.
                     </p>
 
                     <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -52,20 +52,16 @@ export default function HistoryPage() {
 
                                 <div className="border-t border-white/10 p-4">
                                     <div className="flex items-baseline justify-between gap-3">
-                                        <div className="text-sm font-semibold text-primary">{s.year}</div>
-                                        <div className="text-sm font-semibold">{s.game}</div>
+                                        <div className="text-sm font-semibold text-primary">
+                                            {s.year}
+                                        </div>
+                                        <div className="text-sm font-semibold">
+                                            {s.game}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         ))}
-                    </div>
-
-                    <div className="mt-10 rounded-2xl border border-primary/25 bg-black/40 p-6">
-                        <h2 className="text-base font-semibold text-primary">Want more detail?</h2>
-                        <p className="mt-2 text-sm text-zinc-300">
-                            If you want, I can expand each season card with awards, event
-                            results, and a short “robot highlights” list.
-                        </p>
                     </div>
                 </div>
             </Container>

@@ -1,3 +1,4 @@
+@config "../../tailwind.config.ts";
 @import "tailwindcss";
 
 :root {
@@ -7,12 +8,10 @@
 body {
   background: #000000;
   color: rgb(244 244 245);
-  /* zinc-100 */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
   background: rgba(242, 97, 0, 0.30);
-  /* #f26100 @ 30% */
 }

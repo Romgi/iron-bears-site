@@ -9,7 +9,7 @@ export default function Footer() {
                         © {new Date().getFullYear()} FRC 854 — Iron Bears Robotics
                     </div>
                     <div className="text-sm text-zinc-400">
-                        Built with Next.js + Tailwind
+                        Jonathan Graydon - github.com/Romgi
                     </div>
                 </div>
             </Container>

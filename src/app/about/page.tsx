@@ -11,7 +11,7 @@ export default function AboutPage() {
                     </h1>
 
                     <p className="mt-4 max-w-3xl text-zinc-300">
-                        FRC 854 (Iron Bears) is a student-led robotics team that designs,
+                        FRC 854 Iron Bears is a student-led robotics team that designs,
                         builds, and programs competitive robots each season. We focus on
                         skill-building, mentorship, and using engineering to create positive
                         community impact.
@@ -56,12 +56,12 @@ export default function AboutPage() {
                             },
                             {
                                 src: "/images/about/demonstration.jpg",
-                                alt: "Robot demonstration",
-                                label: "Demonstrations",
+                                alt: "CRESCENDO robot showcase",
+                                label: "Community",
                             },
                             {
                                 src: "/images/about/assembly1.jpg",
-                                alt: "Robot assembly",
+                                alt: "REEFSCAPE robot assembly",
                                 label: "Build season",
                             },
                         ].map((img) => (

@@ -22,27 +22,23 @@ export default function ContactPage() {
                                 <div>
                                     General:{" "}
                                     <span className="font-semibold text-primary">
-                                        hello@yourteamdomain.com
+                                        mci.robotics@gmail.com
                                     </span>
                                 </div>
                                 <div>
                                     Sponsorships:{" "}
                                     <span className="font-semibold text-primary">
-                                        sponsors@yourteamdomain.com
+                                        mci.robotics@gmail.com
                                     </span>
                                 </div>
                             </div>
 
                             <h2 className="mt-6 text-base font-semibold text-primary">Social</h2>
                             <ul className="mt-3 space-y-2 text-sm text-zinc-300">
-                                <li>Instagram: @ironbears854</li>
-                                <li>YouTube: Iron Bears Robotics</li>
-                                <li>GitHub: github.com/your-org</li>
+                                <li>Instagram: @team854</li>
+                                <li>YouTube: Martingrove Robotics</li>
+                                <li>GitHub: github.com/team854</li>
                             </ul>
-
-                            <p className="mt-4 text-xs text-zinc-400">
-                                Replace these with your real links/emails whenever you’re ready.
-                            </p>
                         </div>
 
                         <div className="overflow-hidden rounded-2xl border border-primary/25 bg-white/5">

@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Container from "@/components/Container";
 
-type Sponsor = { name: string; logo: string };
+type Sponsor = {
+    name: string;
+    logo: string;
+};
 
 const tiers: Array<{
     tier: string;
@@ -34,10 +37,15 @@ const tiers: Array<{
         },
     ];
 
+const additionalSponsors: Sponsor[] = [
+    { name: "Frontier Metrology", logo: "/images/sponsors/frontier.jpg" },
+    { name: "Baskin Robbins", logo: "/images/sponsors/BaskinRobbins.png" },
+];
+
 function LogoCard({ sponsor }: { sponsor: Sponsor }) {
     return (
-        <div className="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-primary/50 hover:bg-white/10">
-            <div className="relative h-16 w-56 sm:h-20 sm:w-64">
+        <div className="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-primary/60 hover:bg-white/10">
+            <div className="relative h-16 w-56 sm:h-20 sm:w-72">
                 <Image
                     src={sponsor.logo}
                     alt={`${sponsor.name} logo`}
@@ -59,25 +67,29 @@ export default function SponsorsPage() {
                     </h1>
 
                     <p className="mt-4 max-w-3xl text-zinc-300">
-                        Sponsors make our season possible—tools, parts, travel, and outreach.
-                        Thank you for supporting Team 854.
+                        Sponsors make our season possible — supporting tools, parts, travel,
+                        and outreach. Thank you for supporting <span className="text-primary font-semibold">Team 854</span>.
                     </p>
 
-                    <div className="mt-10 space-y-12">
+                    <div className="mt-12 space-y-16">
+                        {/* Tiered sponsors */}
                         {tiers.map((t) => (
                             <section key={t.tier}>
                                 <div className="text-center">
-                                    <h2 className="text-3xl font-semibold tracking-tight text-primary sm:text-4xl">
+                                    <h2 className="text-4xl font-semibold tracking-tight text-primary sm:text-5xl">
                                         {t.tier}
                                     </h2>
-                                    <div className="mt-2 text-sm text-zinc-300">
-                                        <span className="rounded-full border border-primary/40 bg-primary/10 px-3 py-1">
+
+                                    <div className="mx-auto mt-3 h-1 w-24 rounded-full bg-primary/70" />
+
+                                    <div className="mt-3 text-sm text-zinc-200">
+                                        <span className="rounded-full border border-primary/60 bg-primary/15 px-4 py-1 font-semibold text-primary">
                                             {t.amount}
                                         </span>
                                     </div>
                                 </div>
 
-                                <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                     {t.sponsors.map((s) => (
                                         <LogoCard key={s.name} sponsor={s} />
                                     ))}
@@ -85,11 +97,32 @@ export default function SponsorsPage() {
                             </section>
                         ))}
 
-                        <div className="rounded-2xl border border-primary/25 bg-black/40 p-6">
-                            <h3 className="text-base font-semibold text-primary">Sponsor Us</h3>
+                        {/* Additional supporters */}
+                        <section>
+                            <div className="text-center">
+                                <h2 className="text-3xl font-semibold tracking-tight text-primary sm:text-4xl">
+                                    Additional Supporters
+                                </h2>
+
+                                <div className="mx-auto mt-3 h-1 w-20 rounded-full bg-primary/70" />
+                            </div>
+
+                            <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                {additionalSponsors.map((s) => (
+                                    <LogoCard key={s.name} sponsor={s} />
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Call to action */}
+                        <div className="rounded-2xl border border-primary/35 bg-black/40 p-6">
+                            <h3 className="text-base font-semibold text-primary">
+                                Become a Sponsor
+                            </h3>
                             <p className="mt-2 max-w-3xl text-sm text-zinc-300">
-                                Interested in supporting the team? We can share a sponsorship
-                                package and discuss benefits for your organization.
+                                Interested in supporting Iron Bears Robotics? We would love to
+                                partner with you and share a sponsorship package outlining
+                                benefits and impact.
                             </p>
                             <div className="mt-4 text-sm text-zinc-300">
                                 Email:{" "}
