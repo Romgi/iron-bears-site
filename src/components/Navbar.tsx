@@ -28,16 +28,11 @@ export default function Navbar() {
 
     useEffect(() => setOpen(false), [pathname]);
 
-    useEffect(() => {
-        function onKeyDown(e: KeyboardEvent) {
-            if (e.key === "Escape") setOpen(false);
-        }
-        window.addEventListener("keydown", onKeyDown);
-        return () => window.removeEventListener("keydown", onKeyDown);
-    }, []);
-
     return (
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
+        <header className="sticky top-0 z-50 bg-black/90 backdrop-blur border-b border-white/10">
+            {/* Brand accent */}
+            <div className="h-1.5 w-full bg-primary" />
+
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
                 <Link
                     href="/"
@@ -55,8 +50,12 @@ export default function Navbar() {
                     </span>
 
                     <div className="leading-tight">
-                        <div className="text-sm font-semibold tracking-tight">Iron Bears</div>
-                        <div className="text-xs text-zinc-400">FRC Team 854</div>
+                        <div className="text-sm font-semibold tracking-tight text-white">
+                            Iron Bears
+                        </div>
+                        <div className="text-xs text-zinc-400">
+                            <span className="text-primary font-semibold">FRC 854</span> • Robotics
+                        </div>
                     </div>
                 </Link>
 
@@ -65,9 +64,7 @@ export default function Navbar() {
                         href="/"
                         className={cx(
                             "rounded-xl px-3 py-2 text-sm font-medium transition",
-                            isHome
-                                ? "bg-primary/20 text-primary"
-                                : "text-zinc-300 hover:bg-white/5 hover:text-primary"
+                            isHome ? "text-primary" : "text-zinc-300 hover:text-primary"
                         )}
                     >
                         Home
@@ -81,9 +78,7 @@ export default function Navbar() {
                                 href={item.href}
                                 className={cx(
                                     "rounded-xl px-3 py-2 text-sm font-medium transition",
-                                    active
-                                        ? "bg-primary/20 text-primary"
-                                        : "text-zinc-300 hover:bg-white/5 hover:text-primary"
+                                    active ? "text-primary" : "text-zinc-300 hover:text-primary"
                                 )}
                             >
                                 {item.label}
@@ -94,7 +89,7 @@ export default function Navbar() {
 
                 <button
                     type="button"
-                    className="inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-white hover:bg-white/10 md:hidden"
+                    className="inline-flex items-center justify-center rounded-xl border border-primary/40 bg-white/5 px-3 py-2 text-sm font-medium text-white hover:bg-primary/10 md:hidden"
                     aria-label="Open menu"
                     aria-expanded={open}
                     onClick={() => setOpen((v) => !v)}
@@ -111,9 +106,7 @@ export default function Navbar() {
                                 href="/"
                                 className={cx(
                                     "rounded-xl px-3 py-2 text-sm font-medium transition",
-                                    isHome
-                                        ? "bg-primary/20 text-primary"
-                                        : "text-zinc-300 hover:bg-white/5 hover:text-primary"
+                                    isHome ? "text-primary" : "text-zinc-300 hover:text-primary"
                                 )}
                             >
                                 Home
@@ -127,9 +120,7 @@ export default function Navbar() {
                                         href={item.href}
                                         className={cx(
                                             "rounded-xl px-3 py-2 text-sm font-medium transition",
-                                            active
-                                                ? "bg-primary/20 text-primary"
-                                                : "text-zinc-300 hover:bg-white/5 hover:text-primary"
+                                            active ? "text-primary" : "text-zinc-300 hover:text-primary"
                                         )}
                                     >
                                         {item.label}

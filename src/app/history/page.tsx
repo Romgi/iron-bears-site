@@ -39,7 +39,7 @@ export default function HistoryPage() {
                         {seasons.map((s) => (
                             <div
                                 key={s.year}
-                                className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-primary/40 hover:bg-white/10"
+                                className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-primary/50 hover:bg-white/10"
                             >
                                 <div className="relative h-44 w-full sm:h-48">
                                     <Image
@@ -52,9 +52,7 @@ export default function HistoryPage() {
 
                                 <div className="border-t border-white/10 p-4">
                                     <div className="flex items-baseline justify-between gap-3">
-                                        <div className="text-sm font-semibold text-primary">
-                                            {s.year}
-                                        </div>
+                                        <div className="text-sm font-semibold text-primary">{s.year}</div>
                                         <div className="text-sm font-semibold">{s.game}</div>
                                     </div>
                                 </div>
@@ -62,11 +60,11 @@ export default function HistoryPage() {
                         ))}
                     </div>
 
-                    <div className="mt-10 rounded-2xl border border-white/10 bg-black/40 p-6">
-                        <h2 className="text-base font-semibold">Want more detail?</h2>
+                    <div className="mt-10 rounded-2xl border border-primary/25 bg-black/40 p-6">
+                        <h2 className="text-base font-semibold text-primary">Want more detail?</h2>
                         <p className="mt-2 text-sm text-zinc-300">
                             If you want, I can expand each season card with awards, event
-                            results, and a short “robot highlights” bullet list.
+                            results, and a short “robot highlights” list.
                         </p>
                     </div>
                 </div>

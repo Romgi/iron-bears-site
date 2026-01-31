@@ -16,8 +16,8 @@ export default function ContactPage() {
                     </p>
 
                     <div className="mt-10 grid gap-6 lg:grid-cols-2">
-                        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                            <h2 className="text-base font-semibold">Email</h2>
+                        <div className="rounded-2xl border border-primary/25 bg-white/5 p-6">
+                            <h2 className="text-base font-semibold text-primary">Email</h2>
                             <div className="mt-3 space-y-2 text-sm text-zinc-300">
                                 <div>
                                     General:{" "}
@@ -33,7 +33,7 @@ export default function ContactPage() {
                                 </div>
                             </div>
 
-                            <h2 className="mt-6 text-base font-semibold">Social</h2>
+                            <h2 className="mt-6 text-base font-semibold text-primary">Social</h2>
                             <ul className="mt-3 space-y-2 text-sm text-zinc-300">
                                 <li>Instagram: @ironbears854</li>
                                 <li>YouTube: Iron Bears Robotics</li>
@@ -45,7 +45,7 @@ export default function ContactPage() {
                             </p>
                         </div>
 
-                        <div className="overflow-hidden rounded-2xl border border-white/10 bg-white/5">
+                        <div className="overflow-hidden rounded-2xl border border-primary/25 bg-white/5">
                             <Image
                                 src="/images/about/teamphoto.jpg"
                                 alt="Team 854 group photo"

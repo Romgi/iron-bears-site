@@ -13,6 +13,6 @@ body {
 }
 
 ::selection {
-  background: rgba(37, 150, 190, 0.3);
-  /* #2596be @ 30% */
+  background: rgba(242, 97, 0, 0.30);
+  /* #f26100 @ 30% */
 }

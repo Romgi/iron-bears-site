@@ -34,14 +34,9 @@ const tiers: Array<{
         },
     ];
 
-const additional: Sponsor[] = [
-    { name: "Frontier Metrology", logo: "/images/sponsors/frontier.jpg" },
-    { name: "Baskin Robbins", logo: "/images/sponsors/BaskinRobbins.png" },
-];
-
 function LogoCard({ sponsor }: { sponsor: Sponsor }) {
     return (
-        <div className="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-primary/40 hover:bg-white/10">
+        <div className="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-primary/50 hover:bg-white/10">
             <div className="relative h-16 w-56 sm:h-20 sm:w-64">
                 <Image
                     src={sponsor.logo}
@@ -68,17 +63,21 @@ export default function SponsorsPage() {
                         Thank you for supporting Team 854.
                     </p>
 
-                    <div className="mt-10 space-y-10">
+                    <div className="mt-10 space-y-12">
                         {tiers.map((t) => (
                             <section key={t.tier}>
-                                <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
-                                    <h2 className="text-lg font-semibold tracking-tight">
+                                <div className="text-center">
+                                    <h2 className="text-3xl font-semibold tracking-tight text-primary sm:text-4xl">
                                         {t.tier}
                                     </h2>
-                                    <div className="text-sm text-zinc-400">{t.amount}</div>
+                                    <div className="mt-2 text-sm text-zinc-300">
+                                        <span className="rounded-full border border-primary/40 bg-primary/10 px-3 py-1">
+                                            {t.amount}
+                                        </span>
+                                    </div>
                                 </div>
 
-                                <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                                     {t.sponsors.map((s) => (
                                         <LogoCard key={s.name} sponsor={s} />
                                     ))}
@@ -86,19 +85,8 @@ export default function SponsorsPage() {
                             </section>
                         ))}
 
-                        <section>
-                            <h2 className="text-lg font-semibold tracking-tight">
-                                Additional Supporters
-                            </h2>
-                            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                                {additional.map((s) => (
-                                    <LogoCard key={s.name} sponsor={s} />
-                                ))}
-                            </div>
-                        </section>
-
-                        <div className="rounded-2xl border border-white/10 bg-black/40 p-6">
-                            <h3 className="text-base font-semibold">Sponsor Us</h3>
+                        <div className="rounded-2xl border border-primary/25 bg-black/40 p-6">
+                            <h3 className="text-base font-semibold text-primary">Sponsor Us</h3>
                             <p className="mt-2 max-w-3xl text-sm text-zinc-300">
                                 Interested in supporting the team? We can share a sponsorship
                                 package and discuss benefits for your organization.

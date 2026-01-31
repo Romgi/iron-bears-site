@@ -7,7 +7,7 @@ export default function AboutPage() {
             <Container>
                 <div className="py-12 sm:py-16">
                     <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                        About
+                        About <span className="text-primary">Team 854</span>
                     </h1>
 
                     <p className="mt-4 max-w-3xl text-zinc-300">
@@ -18,16 +18,16 @@ export default function AboutPage() {
                     </p>
 
                     <div className="mt-10 grid gap-4 lg:grid-cols-3">
-                        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                            <h2 className="text-base font-semibold">Mission</h2>
+                        <div className="rounded-2xl border border-primary/25 bg-white/5 p-6">
+                            <h2 className="text-base font-semibold text-primary">Mission</h2>
                             <p className="mt-2 text-sm text-zinc-300">
                                 Build great robots and better people through teamwork,
                                 engineering, and competition.
                             </p>
                         </div>
 
-                        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                            <h2 className="text-base font-semibold">Values</h2>
+                        <div className="rounded-2xl border border-primary/25 bg-white/5 p-6">
+                            <h2 className="text-base font-semibold text-primary">Values</h2>
                             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-zinc-300">
                                 <li>Curiosity & learning</li>
                                 <li>Craftsmanship</li>
@@ -36,8 +36,8 @@ export default function AboutPage() {
                             </ul>
                         </div>
 
-                        <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
-                            <h2 className="text-base font-semibold">What We Do</h2>
+                        <div className="rounded-2xl border border-primary/25 bg-white/5 p-6">
+                            <h2 className="text-base font-semibold text-primary">What We Do</h2>
                             <ul className="mt-2 list-disc space-y-1 pl-5 text-sm text-zinc-300">
                                 <li>CAD and fabrication</li>
                                 <li>Electronics and wiring</li>
@@ -67,7 +67,7 @@ export default function AboutPage() {
                         ].map((img) => (
                             <div
                                 key={img.src}
-                                className="overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                                className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-primary/45"
                             >
                                 <Image
                                     src={img.src}
