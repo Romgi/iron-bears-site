@@ -1,15 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   color-scheme: dark;
 }
 
 body {
-  @apply bg-zinc-950 text-zinc-100 antialiased;
+  background: #000000;
+  color: rgb(244 244 245);
+  /* zinc-100 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  @apply bg-blue-500/30;
+  background: rgba(37, 150, 190, 0.3);
+  /* #2596be @ 30% */
 }

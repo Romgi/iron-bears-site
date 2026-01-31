@@ -1,23 +1,58 @@
+import Image from "next/image";
 import Container from "@/components/Container";
 
-const sponsorTiers = [
-    {
-        tier: "Platinum",
-        perks: ["Largest logo placement", "Robot + pit branding", "Event shout-outs"],
-    },
-    {
-        tier: "Gold",
-        perks: ["Large logo placement", "Social media features", "Newsletter mention"],
-    },
-    {
-        tier: "Silver",
-        perks: ["Logo placement", "Thank-you post", "Website listing"],
-    },
-    {
-        tier: "Bronze",
-        perks: ["Website listing", "Team thank-you", "Sponsor certificate"],
-    },
-] as const;
+type Sponsor = { name: string; logo: string };
+
+const tiers: Array<{
+    tier: string;
+    amount: string;
+    sponsors: Sponsor[];
+}> = [
+        {
+            tier: "Gold Sponsors",
+            amount: "$3000+",
+            sponsors: [
+                { name: "Optimist International", logo: "/images/sponsors/optimist.png" },
+                { name: "Gene Haas Foundation", logo: "/images/sponsors/haas.png" },
+            ],
+        },
+        {
+            tier: "Silver Sponsors",
+            amount: "$1500",
+            sponsors: [
+                { name: "JRoberts Defence", logo: "/images/sponsors/JRoberts.png" },
+                { name: "FIRST Canada", logo: "/images/sponsors/FIRSTCanada.png" },
+            ],
+        },
+        {
+            tier: "Bronze Sponsors",
+            amount: "$500",
+            sponsors: [
+                { name: "Right Tech Auto Repair", logo: "/images/sponsors/righttech.jpg" },
+                { name: "S&C Electric Canada", logo: "/images/sponsors/s&c.png" },
+            ],
+        },
+    ];
+
+const additional: Sponsor[] = [
+    { name: "Frontier Metrology", logo: "/images/sponsors/frontier.jpg" },
+    { name: "Baskin Robbins", logo: "/images/sponsors/BaskinRobbins.png" },
+];
+
+function LogoCard({ sponsor }: { sponsor: Sponsor }) {
+    return (
+        <div className="flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-6 transition hover:border-primary/40 hover:bg-white/10">
+            <div className="relative h-16 w-56 sm:h-20 sm:w-64">
+                <Image
+                    src={sponsor.logo}
+                    alt={`${sponsor.name} logo`}
+                    fill
+                    className="object-contain"
+                />
+            </div>
+        </div>
+    );
+}
 
 export default function SponsorsPage() {
     return (
@@ -27,39 +62,53 @@ export default function SponsorsPage() {
                     <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                         Sponsors
                     </h1>
+
                     <p className="mt-4 max-w-3xl text-zinc-300">
                         Sponsors make our season possible—tools, parts, travel, and outreach.
-                        If you’d like to support the team, we’d love to partner with you.
+                        Thank you for supporting Team 854.
                     </p>
 
-                    <div className="mt-10 grid gap-4 lg:grid-cols-2">
-                        {sponsorTiers.map((t) => (
-                            <div
-                                key={t.tier}
-                                className="rounded-2xl border border-white/10 bg-white/5 p-6"
-                            >
-                                <h2 className="text-base font-semibold">{t.tier} Tier</h2>
-                                <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-zinc-300">
-                                    {t.perks.map((p) => (
-                                        <li key={p}>{p}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        ))}
-                    </div>
+                    <div className="mt-10 space-y-10">
+                        {tiers.map((t) => (
+                            <section key={t.tier}>
+                                <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+                                    <h2 className="text-lg font-semibold tracking-tight">
+                                        {t.tier}
+                                    </h2>
+                                    <div className="text-sm text-zinc-400">{t.amount}</div>
+                                </div>
 
-                    <div className="mt-10 rounded-2xl border border-white/10 bg-zinc-950/40 p-6">
-                        <h2 className="text-base font-semibold">How to Sponsor</h2>
-                        <p className="mt-2 max-w-3xl text-sm text-zinc-300">
-                            Email us to request a sponsorship package, discuss tier benefits,
-                            or arrange in-kind donations (materials, machining, electronics,
-                            software, etc.).
-                        </p>
-                        <div className="mt-4 text-sm text-zinc-300">
-                            Contact:{" "}
-                            <span className="font-medium text-white">
-                                sponsors@yourteamdomain.com
-                            </span>
+                                <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                    {t.sponsors.map((s) => (
+                                        <LogoCard key={s.name} sponsor={s} />
+                                    ))}
+                                </div>
+                            </section>
+                        ))}
+
+                        <section>
+                            <h2 className="text-lg font-semibold tracking-tight">
+                                Additional Supporters
+                            </h2>
+                            <div className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                {additional.map((s) => (
+                                    <LogoCard key={s.name} sponsor={s} />
+                                ))}
+                            </div>
+                        </section>
+
+                        <div className="rounded-2xl border border-white/10 bg-black/40 p-6">
+                            <h3 className="text-base font-semibold">Sponsor Us</h3>
+                            <p className="mt-2 max-w-3xl text-sm text-zinc-300">
+                                Interested in supporting the team? We can share a sponsorship
+                                package and discuss benefits for your organization.
+                            </p>
+                            <div className="mt-4 text-sm text-zinc-300">
+                                Email:{" "}
+                                <span className="font-semibold text-primary">
+                                    sponsors@yourteamdomain.com
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>

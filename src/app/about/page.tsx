@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "@/components/Container";
 
 export default function AboutPage() {
@@ -8,14 +9,15 @@ export default function AboutPage() {
                     <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
                         About
                     </h1>
+
                     <p className="mt-4 max-w-3xl text-zinc-300">
                         FRC 854 (Iron Bears) is a student-led robotics team that designs,
-                        builds, and programs competitive robots each season. Our focus is
+                        builds, and programs competitive robots each season. We focus on
                         skill-building, mentorship, and using engineering to create positive
                         community impact.
                     </p>
 
-                    <div className="mt-10 grid gap-4 md:grid-cols-3">
+                    <div className="mt-10 grid gap-4 lg:grid-cols-3">
                         <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
                             <h2 className="text-base font-semibold">Mission</h2>
                             <p className="mt-2 text-sm text-zinc-300">
@@ -43,6 +45,45 @@ export default function AboutPage() {
                                 <li>Outreach + sponsorship</li>
                             </ul>
                         </div>
+                    </div>
+
+                    <div className="mt-10 grid gap-4 lg:grid-cols-3">
+                        {[
+                            {
+                                src: "/images/about/teamphoto.jpg",
+                                alt: "Team 854 group photo",
+                                label: "Team",
+                            },
+                            {
+                                src: "/images/about/demonstration.jpg",
+                                alt: "Robot demonstration",
+                                label: "Demonstrations",
+                            },
+                            {
+                                src: "/images/about/assembly1.jpg",
+                                alt: "Robot assembly",
+                                label: "Build season",
+                            },
+                        ].map((img) => (
+                            <div
+                                key={img.src}
+                                className="overflow-hidden rounded-2xl border border-white/10 bg-white/5"
+                            >
+                                <Image
+                                    src={img.src}
+                                    alt={img.alt}
+                                    width={1400}
+                                    height={900}
+                                    className="h-56 w-full object-cover sm:h-64"
+                                />
+                                <div className="border-t border-white/10 p-4">
+                                    <div className="text-sm font-semibold text-primary">
+                                        {img.label}
+                                    </div>
+                                    <div className="mt-1 text-xs text-zinc-400">{img.alt}</div>
+                                </div>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </Container>

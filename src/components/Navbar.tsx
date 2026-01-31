@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
@@ -20,17 +21,12 @@ export default function Navbar() {
     const [open, setOpen] = useState(false);
 
     const isHome = pathname === "/";
-    const brandHref = "/";
-    const brand = "Iron Bears";
+    const activeHref = useMemo(
+        () => navItems.find((i) => i.href === pathname)?.href ?? null,
+        [pathname]
+    );
 
-    const activeHref = useMemo(() => {
-        const exact = navItems.find((i) => i.href === pathname)?.href;
-        return exact ?? null;
-    }, [pathname]);
-
-    useEffect(() => {
-        setOpen(false);
-    }, [pathname]);
+    useEffect(() => setOpen(false), [pathname]);
 
     useEffect(() => {
         function onKeyDown(e: KeyboardEvent) {
@@ -41,23 +37,28 @@ export default function Navbar() {
     }, []);
 
     return (
-        <header className="sticky top-0 z-50 border-b border-white/10 bg-zinc-950/75 backdrop-blur">
+        <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur">
             <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-                <div className="flex items-center gap-3">
-                    <Link
-                        href={brandHref}
-                        className="group inline-flex items-center gap-2 rounded-xl px-2 py-1 hover:bg-white/5"
-                        aria-label="Home"
-                    >
-                        <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-sm font-semibold">
-                            854
-                        </span>
-                        <div className="leading-tight">
-                            <div className="text-sm font-semibold tracking-tight">{brand}</div>
-                            <div className="text-xs text-zinc-400">FRC Team</div>
-                        </div>
-                    </Link>
-                </div>
+                <Link
+                    href="/"
+                    className="group inline-flex items-center gap-3 rounded-xl px-2 py-1 hover:bg-white/5"
+                    aria-label="Home"
+                >
+                    <span className="relative h-9 w-9 overflow-hidden rounded-xl border border-white/10 bg-white/5">
+                        <Image
+                            src="/images/logo.png"
+                            alt="Iron Bears logo"
+                            fill
+                            className="object-contain p-1"
+                            priority
+                        />
+                    </span>
+
+                    <div className="leading-tight">
+                        <div className="text-sm font-semibold tracking-tight">Iron Bears</div>
+                        <div className="text-xs text-zinc-400">FRC Team 854</div>
+                    </div>
+                </Link>
 
                 <nav className="hidden items-center gap-1 md:flex">
                     <Link
@@ -65,12 +66,13 @@ export default function Navbar() {
                         className={cx(
                             "rounded-xl px-3 py-2 text-sm font-medium transition",
                             isHome
-                                ? "bg-white/10 text-white"
-                                : "text-zinc-300 hover:bg-white/5 hover:text-white"
+                                ? "bg-primary/20 text-primary"
+                                : "text-zinc-300 hover:bg-white/5 hover:text-primary"
                         )}
                     >
                         Home
                     </Link>
+
                     {navItems.map((item) => {
                         const active = activeHref === item.href;
                         return (
@@ -80,8 +82,8 @@ export default function Navbar() {
                                 className={cx(
                                     "rounded-xl px-3 py-2 text-sm font-medium transition",
                                     active
-                                        ? "bg-white/10 text-white"
-                                        : "text-zinc-300 hover:bg-white/5 hover:text-white"
+                                        ? "bg-primary/20 text-primary"
+                                        : "text-zinc-300 hover:bg-white/5 hover:text-primary"
                                 )}
                             >
                                 {item.label}
@@ -102,7 +104,7 @@ export default function Navbar() {
             </div>
 
             {open && (
-                <div className="border-t border-white/10 bg-zinc-950 md:hidden">
+                <div className="border-t border-white/10 bg-black md:hidden">
                     <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
                         <div className="grid gap-2">
                             <Link
@@ -110,12 +112,13 @@ export default function Navbar() {
                                 className={cx(
                                     "rounded-xl px-3 py-2 text-sm font-medium transition",
                                     isHome
-                                        ? "bg-white/10 text-white"
-                                        : "text-zinc-300 hover:bg-white/5 hover:text-white"
+                                        ? "bg-primary/20 text-primary"
+                                        : "text-zinc-300 hover:bg-white/5 hover:text-primary"
                                 )}
                             >
                                 Home
                             </Link>
+
                             {navItems.map((item) => {
                                 const active = activeHref === item.href;
                                 return (
@@ -125,8 +128,8 @@ export default function Navbar() {
                                         className={cx(
                                             "rounded-xl px-3 py-2 text-sm font-medium transition",
                                             active
-                                                ? "bg-white/10 text-white"
-                                                : "text-zinc-300 hover:bg-white/5 hover:text-white"
+                                                ? "bg-primary/20 text-primary"
+                                                : "text-zinc-300 hover:bg-white/5 hover:text-primary"
                                         )}
                                     >
                                         {item.label}
