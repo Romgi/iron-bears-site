@@ -21,7 +21,7 @@ const tiers: Array<{
         },
         {
             tier: "Silver Sponsors",
-            amount: "$1500",
+            amount: "$1500+",
             sponsors: [
                 { name: "JRoberts Defence", logo: "/images/sponsors/JRoberts.png" },
                 { name: "FIRST Canada", logo: "/images/sponsors/FIRSTCanada.png" },
@@ -29,7 +29,7 @@ const tiers: Array<{
         },
         {
             tier: "Bronze Sponsors",
-            amount: "$500",
+            amount: "$500+",
             sponsors: [
                 { name: "Right Tech Auto Repair", logo: "/images/sponsors/righttech.jpg" },
                 { name: "S&C Electric Canada", logo: "/images/sponsors/s&c.png" },
