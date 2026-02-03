@@ -3,7 +3,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Analytics } from "@vercel/analytics/next";
 
 export const metadata: Metadata = {
   title: "FRC 854 | Iron Bears",
@@ -22,9 +21,6 @@ export default function RootLayout({
 
         {/* Vercel Speed Insights */}
         <SpeedInsights />
-
-        {/* Vercel Web Analytics */}
-        <Analytics />
       </body>
     </html>
   );

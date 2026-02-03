@@ -15,9 +15,9 @@ const tiers: Array<{
             tier: "Gold Sponsors",
             amount: "$3000+",
             sponsors: [
-                { name: "Optimist International", logo: "/images/sponsors/optimist.png" },
-                { name: "Gene Haas Foundation", logo: "/images/sponsors/haas.png" },
-                { name: "Hatch", logo: "/images/sponsors/hatch.png" },
+                { name: "Optimist International", logo: "/images/sponsors/Optimist.png" },
+                { name: "Gene Haas Foundation", logo: "/images/sponsors/Haas.png" },
+                { name: "Hatch", logo: "/images/sponsors/Hatch.png" },
             ],
         },
         {
@@ -26,23 +26,24 @@ const tiers: Array<{
             sponsors: [
                 { name: "JRoberts Defence", logo: "/images/sponsors/JRoberts.png" },
                 { name: "FIRST Canada", logo: "/images/sponsors/FIRSTCanada.png" },
-                { name: "Studio Black Box", logo: "/images/sponsors/studioblackbox.png" },
+                { name: "Studio Black Box", logo: "/images/sponsors/Studioblackbox.png" },
             ],
         },
         {
             tier: "Bronze Sponsors",
             amount: "$500+",
             sponsors: [
-                { name: "Right Tech Auto Repair", logo: "/images/sponsors/righttech.png" },
-                { name: "S&C Electric Canada", logo: "/images/sponsors/s&c.png" },
+                { name: "Right Tech Auto Repair", logo: "/images/sponsors/Righttech.png" },
+                { name: "S&C Electric Canada", logo: "/images/sponsors/S&C.png" },
             ],
         },
     ];
 
 const additionalSponsors: Sponsor[] = [
-    { name: "Frontier Metrology", logo: "/images/sponsors/frontier.png" },
+    { name: "Frontier Metrology", logo: "/images/sponsors/Frontier.png" },
     { name: "Baskin Robbins", logo: "/images/sponsors/BaskinRobbins.png" },
-    { name: "TDSB", logo: "/images/sponsors/tdsb.png" },
+    { name: "TDSB", logo: "/images/sponsors/TDSB.png" },
+    { name: "Martingrove Collegiate Institute", logo: "/images/sponsors/Martingrove.png" }
 ];
 
 function LogoCard({ sponsor }: { sponsor: Sponsor }) {
