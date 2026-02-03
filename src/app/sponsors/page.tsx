@@ -17,6 +17,7 @@ const tiers: Array<{
             sponsors: [
                 { name: "Optimist International", logo: "/images/sponsors/optimist.png" },
                 { name: "Gene Haas Foundation", logo: "/images/sponsors/haas.png" },
+                { name: "Hatch", logo: "/images/sponsors/hatch.png" },
             ],
         },
         {
@@ -41,6 +42,7 @@ const tiers: Array<{
 const additionalSponsors: Sponsor[] = [
     { name: "Frontier Metrology", logo: "/images/sponsors/frontier.png" },
     { name: "Baskin Robbins", logo: "/images/sponsors/BaskinRobbins.png" },
+    { name: "TDSB", logo: "/images/sponsors/tdsb.png" },
 ];
 
 function LogoCard({ sponsor }: { sponsor: Sponsor }) {
