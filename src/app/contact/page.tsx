@@ -20,13 +20,13 @@ export default function ContactPage() {
                             <h2 className="text-base font-semibold text-primary">Email</h2>
                             <div className="mt-3 space-y-2 text-sm text-zinc-300">
                                 <div>
-                                    Team:{" "}
+                                    Team Email:{" "}
                                     <span className="font-semibold text-primary">
                                         mci.robotics@gmail.com
                                     </span>
                                 </div>
                                 <div>
-                                    School:{" "}
+                                    School Email:{" "}
                                     <span className="font-semibold text-primary">
                                         Martingrove@tdsb.on.ca
                                     </span>
