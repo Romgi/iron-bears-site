@@ -37,9 +37,31 @@ const tiers: Array<{
             tier: "Silver Sponsors",
             amount: "$1500+",
             sponsors: [
-                { name: "JRoberts Defence", logo: "/images/sponsors/JRoberts.png" },
-                { name: "FIRST Canada", logo: "/images/sponsors/FIRSTCanada.png" },
-                { name: "Studio Black Box", logo: "/images/sponsors/studioblackbox.png" },
+                {
+                    name: "JRoberts Defence",
+                    logo: "/images/sponsors/JRoberts.png",
+                    url: "https://www.jrobertsdefence.com",
+                },
+                {
+                    name: "FIRST Canada",
+                    logo: "/images/sponsors/FIRSTCanada.png",
+                    url: "https://www.firstcanada.org",
+                },
+                {
+                    name: "Studio Black Box",
+                    logo: "/images/sponsors/studioblackbox.png",
+                    url: "https://www.studioblackbox.com",
+                },
+                {
+                    name: "HamiCo",
+                    logo: "/images/sponsors/hamico.png",
+                    url: "https://www.team854.org/sponsors",
+                },
+                {
+                    name: "Wellness Tree Therapy",
+                    logo: "/images/sponsors/wellnesstree.png",
+                    url: "https://www.team854.org/sponsors",
+                },
             ],
         },
         {
