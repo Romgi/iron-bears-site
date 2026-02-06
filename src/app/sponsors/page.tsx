@@ -27,6 +27,8 @@ const tiers: Array<{
                 { name: "JRoberts Defence", logo: "/images/sponsors/JRoberts.png" },
                 { name: "FIRST Canada", logo: "/images/sponsors/FIRSTCanada.png" },
                 { name: "Studio Black Box", logo: "/images/sponsors/studioblackbox.png" },
+                { name: "HamiCo", logo: "/images/sponsors/hamico.png" },
+                { name: "Wellness Tree", logo: "/images/sponsors/wellnesstree.png" },
             ],
         },
         {
