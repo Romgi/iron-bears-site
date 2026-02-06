@@ -39,12 +39,12 @@ const tiers: Array<{
             sponsors: [
                 {
                     name: "JRoberts Defence",
-                    logo: "/images/sponsors/JRoberts.png",
+                    logo: "/images/sponsors/jroberts.png",
                     url: "https://www.jrobertsdefence.com",
                 },
                 {
                     name: "FIRST Canada",
-                    logo: "/images/sponsors/FIRSTCanada.png",
+                    logo: "/images/sponsors/firstcanada.png",
                     url: "https://www.firstcanada.org",
                 },
                 {
