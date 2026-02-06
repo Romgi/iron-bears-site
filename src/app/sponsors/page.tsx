@@ -60,7 +60,7 @@ const tiers: Array<{
                 {
                     name: "Wellness Tree Therapy",
                     logo: "/images/sponsors/wellnesstree.png",
-                    url: "https://www.team854.org/sponsors",
+                    url: "https://wellnesstreetherapy.ca/",
                 },
             ],
         },
