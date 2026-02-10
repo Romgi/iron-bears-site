@@ -33,36 +33,87 @@ export default function HistoryPage() {
                     </h1>
 
                     <p className="mt-4 max-w-3xl text-zinc-300">
-                        Our robots by season.
+                        Our robots by season. Click a year to view Team 854 on{" "}
+                        <span className="text-primary font-semibold">The Blue Alliance</span>.
                     </p>
 
                     <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                        {seasons.map((s) => (
-                            <div
-                                key={s.year}
-                                className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition hover:border-primary/50 hover:bg-white/10"
-                            >
-                                <div className="relative h-44 w-full sm:h-48">
-                                    <Image
-                                        src={s.image}
-                                        alt={`Team 854 robot from ${s.year}`}
-                                        fill
-                                        className="object-cover"
-                                    />
-                                </div>
+                        {seasons.map((s) => {
+                            const isComingSoon = s.year === 2026;
 
-                                <div className="border-t border-white/10 p-4">
-                                    <div className="flex items-baseline justify-between gap-3">
-                                        <div className="text-sm font-semibold text-primary">
-                                            {s.year}
+                            // Blue Alliance link for each year
+                            const tbaUrl = `https://www.thebluealliance.com/team/854/${s.year}`;
+
+                            // Shared tile styling
+                            const tileClasses =
+                                "overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition";
+
+                            // If it's coming soon, disable link behavior
+                            if (isComingSoon) {
+                                return (
+                                    <div
+                                        key={s.year}
+                                        className={`${tileClasses} opacity-60 cursor-not-allowed`}
+                                    >
+                                        <div className="relative h-44 w-full sm:h-48">
+                                            <Image
+                                                src={s.image}
+                                                alt={`Team 854 robot from ${s.year}`}
+                                                fill
+                                                className="object-cover"
+                                            />
                                         </div>
-                                        <div className="text-sm font-semibold">
-                                            {s.game}
+
+                                        <div className="border-t border-white/10 p-4">
+                                            <div className="flex items-baseline justify-between gap-3">
+                                                <div className="text-sm font-semibold text-primary">
+                                                    {s.year}
+                                                </div>
+                                                <div className="text-sm font-semibold">{s.game}</div>
+                                            </div>
+
+                                            <div className="mt-2 text-xs text-zinc-400">
+                                                Blue Alliance page not available yet
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        ))}
+                                );
+                            }
+
+                            // Normal clickable tile
+                            return (
+                                <a
+                                    key={s.year}
+                                    href={tbaUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={`${tileClasses} hover:border-primary/50 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-primary/60`}
+                                    aria-label={`View Team 854 ${s.year} season on The Blue Alliance`}
+                                >
+                                    <div className="relative h-44 w-full sm:h-48">
+                                        <Image
+                                            src={s.image}
+                                            alt={`Team 854 robot from ${s.year}`}
+                                            fill
+                                            className="object-cover"
+                                        />
+                                    </div>
+
+                                    <div className="border-t border-white/10 p-4">
+                                        <div className="flex items-baseline justify-between gap-3">
+                                            <div className="text-sm font-semibold text-primary">
+                                                {s.year}
+                                            </div>
+                                            <div className="text-sm font-semibold">{s.game}</div>
+                                        </div>
+
+                                        <div className="mt-2 text-xs text-zinc-400">
+                                            View season on The Blue Alliance →
+                                        </div>
+                                    </div>
+                                </a>
+                            );
+                        })}
                     </div>
                 </div>
             </Container>
