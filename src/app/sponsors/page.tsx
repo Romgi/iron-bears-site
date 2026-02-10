@@ -89,6 +89,11 @@ const additionalSponsors: Sponsor[] = [
         url: "https://www.frontiermetrology.com",
     },
     {
+        name: "Milwaukee",
+        logo: "/images/sponsors/milwaukee.png",
+        url: "https://www.milwaukeetool.ca/",
+    },
+    {
         name: "Baskin Robbins",
         logo: "/images/sponsors/baskinrobbins.png",
         url: "https://www.baskinrobbins.com",
