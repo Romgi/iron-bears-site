@@ -8,6 +8,7 @@ type Season = {
 };
 
 const seasons: Season[] = [
+    { year: 2026, game: "REBUILT - Coming Soon!", image: "/images/history/2026.jpg" },
     { year: 2025, game: "REEFSCAPE", image: "/images/history/2025.jpg" },
     { year: 2024, game: "CRESCENDO", image: "/images/history/2024.jpg" },
     { year: 2020, game: "Infinite Recharge", image: "/images/history/2020.jpg" },
