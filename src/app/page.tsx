@@ -45,7 +45,7 @@ export default function HomePage() {
               </div>
 
               <h1 className="mt-5 text-3xl font-semibold tracking-tight sm:text-5xl">
-                <span className="text-primary">FRC 854</span> — Iron Bears
+                <span className="text-primary">Team 854</span> — Iron Bears
                 <br />
                 Robotics
               </h1>

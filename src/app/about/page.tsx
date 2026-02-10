@@ -11,7 +11,7 @@ export default function AboutPage() {
                     </h1>
 
                     <p className="mt-4 max-w-3xl text-zinc-300">
-                        FRC 854 Iron Bears is a student-led robotics team that designs,
+                        FRC Team 854: Iron Bears is a student-led robotics team from Toronto Ontario that designs,
                         builds, and programs competitive robots each season. We focus on
                         skill-building, mentorship, and using engineering to create positive
                         community impact.
