@@ -78,6 +78,11 @@ const tiers: Array<{
                     logo: "/images/sponsors/sandc.png",
                     url: "https://www.sandc.com",
                 },
+                {
+                    name: "Milwaukee",
+                    logo: "/images/sponsors/milwaukee.png",
+                    url: "https://www.milwaukeetool.com",
+                }
             ],
         },
     ];
@@ -87,11 +92,6 @@ const additionalSponsors: Sponsor[] = [
         name: "Frontier Metrology",
         logo: "/images/sponsors/frontier.png",
         url: "https://www.frontiermetrology.com",
-    },
-    {
-        name: "Milwaukee",
-        logo: "/images/sponsors/milwaukee.png",
-        url: "https://www.milwaukeetool.ca/",
     },
     {
         name: "Baskin Robbins",
