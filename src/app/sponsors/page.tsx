@@ -43,6 +43,11 @@ const tiers: Array<{
                     url: "https://www.jrobertsdefence.com",
                 },
                 {
+                    name: "Rotary Club of Etobicoke",
+                    logo: "/images/sponsors/rotary.png",
+                    url: "https://www.rotaryetobicoke.org/",
+                },
+                {
                     name: "FIRST Canada",
                     logo: "/images/sponsors/firstcanada.png",
                     url: "https://www.firstcanada.org",
