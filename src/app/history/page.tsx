@@ -8,7 +8,7 @@ type Season = {
 };
 
 const seasons: Season[] = [
-    { year: 2026, game: "REBUILT - Coming Soon!", image: "/images/history/2026.jpg" },
+    { year: 2026, game: "REBUILT", image: "/images/history/2026.jpg" },
     { year: 2025, game: "REEFSCAPE", image: "/images/history/2025.jpg" },
     { year: 2024, game: "CRESCENDO", image: "/images/history/2024.jpg" },
     { year: 2020, game: "Infinite Recharge", image: "/images/history/2020.jpg" },
@@ -39,46 +39,12 @@ export default function HistoryPage() {
 
                     <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                         {seasons.map((s) => {
-                            const isComingSoon = s.year === 2026;
-
                             // Blue Alliance link for each year
                             const tbaUrl = `https://www.thebluealliance.com/team/854/${s.year}`;
 
                             // Shared tile styling
                             const tileClasses =
                                 "overflow-hidden rounded-2xl border border-white/10 bg-white/5 transition";
-
-                            // If it's coming soon, disable link behavior
-                            if (isComingSoon) {
-                                return (
-                                    <div
-                                        key={s.year}
-                                        className={`${tileClasses} opacity-60 cursor-not-allowed`}
-                                    >
-                                        <div className="relative h-44 w-full sm:h-48">
-                                            <Image
-                                                src={s.image}
-                                                alt={`Team 854 robot from ${s.year}`}
-                                                fill
-                                                className="object-cover"
-                                            />
-                                        </div>
-
-                                        <div className="border-t border-white/10 p-4">
-                                            <div className="flex items-baseline justify-between gap-3">
-                                                <div className="text-sm font-semibold text-primary">
-                                                    {s.year}
-                                                </div>
-                                                <div className="text-sm font-semibold">{s.game}</div>
-                                            </div>
-
-                                            <div className="mt-2 text-xs text-zinc-400">
-                                                Blue Alliance page not available yet
-                                            </div>
-                                        </div>
-                                    </div>
-                                );
-                            }
 
                             // Normal clickable tile
                             return (
